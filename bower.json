@@ -1,0 +1,21 @@
+{
+  "name": "Rorschach",
+  "version": "0.0.0",
+  "homepage": "https://github.com/sundeepnarang/Rorschach",
+  "authors": [
+    "Sundeep Narang <sundeepnrng@gmail.com>"
+  ],
+  "main": "ink.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "d3": "~3.5.6",
+    "jquery": "~2.1.4"
+  }
+}
