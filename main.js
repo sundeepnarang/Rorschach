@@ -5,10 +5,11 @@
 var colorMode = 0
 var colorModeMap = {
     0: "B/W",
-    1: "Left Color",
-    2: "Right Color",
-    3: "Same Color All",
-    4: "Diff Left/Right Color"
+    1: "B/R/W",
+    2: "Left Color",
+    3: "Right Color",
+    4: "Same Color All",
+    5: "Diff Left/Right Color"
 }
 
 function create(side,res){
@@ -34,6 +35,23 @@ function create(side,res){
                 }
                 break;
                 case 1: {
+                    g1 = f1 = 255 * parseInt(Math.random() + 0.25);
+                    t1 = s1 = 255 * parseInt(Math.random() + 0.25);
+                    if(f1===0){
+                        f = 0
+                    } else {
+                        f = 255 * parseInt(Math.random() + 0.25);
+                    }
+                    if(s1===0){
+                        s = 0
+                    } else {
+                        s = 255 * parseInt(Math.random() + 0.25);
+                    }
+                    f2 = f3 = g2 = g3 = f
+                    s2 = s3 = t2 = t3 = s
+                }
+                break;
+                case 2: {
                     f1 = parseInt(255 * Math.random());
                     f2 = parseInt(255 * Math.random());
                     f3 = parseInt(255 * Math.random());
@@ -46,7 +64,7 @@ function create(side,res){
                     t1 = t2 = t3 = s
                 }
                 break;
-                case 2: {
+                case 3: {
                     g1 = parseInt(255 * Math.random());
                     g2 = parseInt(255 * Math.random());
                     g3 = parseInt(255 * Math.random());
@@ -59,7 +77,7 @@ function create(side,res){
                     s1 = s2 = s3 = s
                 }
                 break;
-                case 3: {
+                case 4: {
                     f1 = g1 = parseInt(255 * Math.random());
                     f2 = g2 = parseInt(255 * Math.random());
                     f3 = g3 = parseInt(255 * Math.random());
@@ -68,7 +86,7 @@ function create(side,res){
                     s3 = t3 = parseInt(255 * Math.random());
                 }
                 break;
-                case 4: {
+                case 5: {
                     f1 = parseInt(255 * Math.random());
                     f2 = parseInt(255 * Math.random());
                     f3 = parseInt(255 * Math.random());
@@ -127,7 +145,7 @@ $(function () {
     });
     $("button#color").click(function () {
         colorMode = colorMode +1
-        if(colorMode == 5){
+        if(colorMode == 6){
             colorMode = 0
         }
         $("#colormode").text(colorModeMap[colorMode])
